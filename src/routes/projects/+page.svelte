@@ -1,3 +1,7 @@
+<script>
+  import Project from "$lib/project.svelte";
+</script>
+
 <article>
   <header>
     <hgroup>
@@ -8,92 +12,33 @@
 
   <div class="grid">
     <div>
-      <article>
-        <header>
-          <a href="https://roboterrifiant.itch.io/tower-of-mamel">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="towerofmamel.png" />
-          </a>
-        </header>
-        <hgroup>
-          <p>Tower of Mamel</p>
-          <p>video game using godot</p>
-        </hgroup>
-      </article>
-      <article>
-        <header>
-          <a href="https://survexa.itch.io/blood-shake">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="bloodshake.jpg" />
-          </a>
-        </header>
-        <hgroup>
-          <p>Blood Shake</p>
-          <p>video game using unity</p>
-        </hgroup>
-      </article>
+      <Project
+        title="Tower of Mamel"
+        description="video game using Godot"
+        image="towerofmamel.png"
+        link="https://roboterrifiant.itch.io/tower-of-mamel"
+      />
+      <Project
+        title="Blood Shake"
+        description="video game using Unity"
+        image="bloodshake.jpg"
+        link="https://survexa.itch.io/blood-shake"
+      />
     </div>
     <div>
-      <article>
-        <header>
-          <a href="https://roboterrifiant.itch.io/tower-of-mamel">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="towerofmamel.png" />
-          </a>
-        </header>
-        <hgroup>
-          <p>Tower of Mamel</p>
-          <p>2024</p>
-        </hgroup>
-      </article>
-      <article>
-        <header>
-          <a href="https://roboterrifiant.itch.io/tower-of-mamel">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="towerofmamel.png" />
-          </a>
-        </header>
-        <hgroup>
-          <p>Tower of Mamel</p>
-          <p>2024</p>
-        </hgroup>
-      </article>
+      <Project
+        title="File Share"
+        description="file manager using Svelte and FastAPI"
+        image="fileshare.png"
+        link="https://github.com/DimitriMansour667/FileShare"
+      />
+      <Project
+        title="DimiLIB"
+        description="AI tool using Streamlit and OpenAI"
+        image="dimilib.png"
+        link="https://dimilib.streamlit.app/"
+      />
     </div>
-    <div>
-      <article>
-        <header>
-          <a href="https://roboterrifiant.itch.io/tower-of-mamel">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="towerofmamel.png" />
-          </a>
-        </header>
-        <hgroup>
-          <p>Tower of Mamel</p>
-          <p>2024</p>
-        </hgroup>
-      </article>
-      <article>
-        <header>
-          <a href="https://roboterrifiant.itch.io/tower-of-mamel">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="towerofmamel.png" />
-          </a>
-        </header>
-        <hgroup>
-          <p>Tower of Mamel</p>
-          <p>2024</p>
-        </hgroup>
-      </article>
-    </div>
+    <div></div>
   </div>
 </article>
-
-<style>
-  div.grid article > header {
-    display: flex;
-    justify-content: center;
-  }
-  img {
-    height: 10rem;
-  }
-</style>
