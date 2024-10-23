@@ -1,7 +1,11 @@
-<script>
-  import "../css/pico.min.css";
-  import "../css/pico.colors.css";
-</script>
+<link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
+<link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css"
+>
 
 <header class="container">
   <nav>

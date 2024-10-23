@@ -6,7 +6,7 @@
   <header>
     <hgroup>
       <h2 class="pico-color-pink-500">Projects</h2>
-      <p>Here are some of the projects I've worked on.</p>
+      <p>Here are a few of my personal projects.</p>
     </hgroup>
   </header>
 
@@ -39,6 +39,19 @@
         link="https://dimilib.streamlit.app/"
       />
     </div>
-    <div></div>
+    <div>
+      <Project
+        title="DodgeRP"
+        description="video game using Unity"
+        image="dodgerp.png"
+        link="https://dimitrimansour667.github.io/DodgeRP/"
+      />
+      <Project
+        title="DM Portfolio"
+        description="personal website using SvelteKit"
+        image="dmportfolio.png"
+        link="https://dm-portfolio.info"
+      />
+    </div>
   </div>
 </article>
