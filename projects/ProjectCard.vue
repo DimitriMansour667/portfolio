@@ -213,14 +213,38 @@ const handleClick = (link) => {
   bottom: 0;
   background: linear-gradient(
     45deg,
-    var(--vp-c-brand-soft) 0%,
-    var(--vp-c-bg-soft) 50%,
-    var(--vp-c-brand-soft) 100%
+    #ff4757,
+    #2ed573,
+    #1e90ff,
+    #ffa502,
+    #ff4757
   );
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   z-index: -1;
   opacity: 0.3;
+  pointer-events: none;
+}
+
+.projects-container::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    -45deg,
+    #ff4757,
+    #2ed573,
+    #1e90ff,
+    #ffa502,
+    #ff4757
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite reverse;
+  z-index: -1;
+  opacity: 0.2;
   pointer-events: none;
 }
 

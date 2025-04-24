@@ -23,11 +23,11 @@ const handleSubmit = async (e) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Accept": "application/json"
+        Accept: "application/json",
       },
       body: JSON.stringify(formData.value),
       mode: "cors",
-      credentials: "omit"
+      credentials: "omit",
     });
 
     if (response.ok) {
@@ -35,16 +35,18 @@ const handleSubmit = async (e) => {
       formData.value = { name: "", email: "", subject: "", message: "" };
     } else {
       const errorData = await response.json().catch(() => ({}));
-      console.error('Form submission error:', errorData);
+      console.error("Form submission error:", errorData);
       submitError.value = true;
     }
   } catch (error) {
-    console.error('Form submission error:', error);
+    console.error("Form submission error:", error);
     // Check if it's a CORS error
-    if (error.name === 'TypeError' && error.message.includes('CORS')) {
+    if (error.name === "TypeError" && error.message.includes("CORS")) {
       submitError.value = true;
       // You might want to show a more specific message for CORS errors
-      alert('Unable to submit form due to browser security restrictions. Please try using a different browser or contact directly via email.');
+      alert(
+        "Unable to submit form due to browser security restrictions. Please try using a different browser or contact directly via email."
+      );
     } else {
       submitError.value = true;
     }
@@ -162,7 +164,12 @@ const handleLinkedInClick = () => {
 
         <div v-if="submitError" class="alert error">
           <p>Oops! Something went wrong. Please try again later.</p>
-          <p class="error-details">If the problem persists, you can reach me directly at <a href="mailto:dimi.mansour03@gmail.com">dimi.mansour03@gmail.com</a></p>
+          <p class="error-details">
+            If the problem persists, you can reach me directly at
+            <a href="mailto:dimi.mansour03@gmail.com"
+              >dimi.mansour03@gmail.com</a
+            >
+          </p>
         </div>
       </form>
     </div>
@@ -174,7 +181,6 @@ const handleLinkedInClick = () => {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  margin-top: 0;
   position: relative;
   overflow: hidden;
 }
@@ -188,14 +194,38 @@ const handleLinkedInClick = () => {
   bottom: 0;
   background: linear-gradient(
     45deg,
-    var(--vp-c-brand-soft) 0%,
-    var(--vp-c-bg-soft) 50%,
-    var(--vp-c-brand-soft) 100%
+    #ff4757,
+    #2ed573,
+    #1e90ff,
+    #ffa502,
+    #ff4757
   );
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   z-index: -1;
   opacity: 0.3;
+  pointer-events: none;
+}
+
+.contact-container::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    -45deg,
+    #ff4757,
+    #2ed573,
+    #1e90ff,
+    #ffa502,
+    #ff4757
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite reverse;
+  z-index: -1;
+  opacity: 0.2;
   pointer-events: none;
 }
 

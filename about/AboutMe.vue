@@ -266,14 +266,38 @@ const activities = [
   bottom: 0;
   background: linear-gradient(
     45deg,
-    var(--vp-c-brand-soft) 0%,
-    var(--vp-c-bg-soft) 50%,
-    var(--vp-c-brand-soft) 100%
+    #ff4757,
+    #2ed573,
+    #1e90ff,
+    #ffa502,
+    #ff4757
   );
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   z-index: -1;
   opacity: 0.3;
+  pointer-events: none;
+}
+
+.about-container::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    -45deg,
+    #ff4757,
+    #2ed573,
+    #1e90ff,
+    #ffa502,
+    #ff4757
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite reverse;
+  z-index: -1;
+  opacity: 0.2;
   pointer-events: none;
 }
 
@@ -290,10 +314,7 @@ const activities = [
 }
 
 /* Ensure content is above the background */
-.intro-section,
-.experience-section,
-.skills-section,
-.education-section {
+.about-content {
   position: relative;
   z-index: 1;
 }

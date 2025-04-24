@@ -2,6 +2,39 @@
 layout: doc
 ---
 
+<div class="blog-post-container">
+  <a href="/blog" class="back-button">
+    <span class="back-arrow">←</span> Back to Blog
+  </a>
+</div>
+
+<style scoped>
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--vp-c-divider);
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  background: var(--vp-c-bg);
+  transform: translateX(-4px);
+}
+
+.back-arrow {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+</style>
+
 # Migrating Everything to VitePress
 
 <sub>March 31, 2025</sub>

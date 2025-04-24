@@ -142,7 +142,9 @@
   display: none;
 }
 
-/* Show local search only on blog pages */
-:root:has(a[href*="/blog/"]) #local-search {
-  display: block;
+/* Show local search only on blogs pages */
+:root:has(a[href*="/blogs/"]) {
+  #local-search {
+    display: block;
+  }
 }

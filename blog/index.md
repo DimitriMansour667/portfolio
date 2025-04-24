@@ -1,14 +1,10 @@
 ---
-layout: doc
-editLink: true
+layout: page
+title: Blog
 ---
 
-# All Blog Posts
+<script setup>
+import BlogPage from './BlogPage.vue'
+</script>
 
-Check out all of my blog posts below.
-
-## Migrating everything to VitePress
-<sub>3/31/2025</sub>
-
-Why I migrated my portfolio to VitePress and what I learned from it.
-[Read More](./1)
+<BlogPage />

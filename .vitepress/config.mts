@@ -31,23 +31,8 @@ export default defineConfig({
       copyright: "MIT Licensed",
     },
 
-    sidebar: {
-      "/blog/": [
-        {
-          text: "Blogs",
-          items: [
-            { text: "View All Posts", link: "/blog/index.md" },
-            { text: "Migrating everything to VitePress", link: "/blog/1" },
-          ],
-        },
-      ],
-    },
-
     search: {
       provider: "local",
-      options: {
-        filter: (page) => page.relativePath.startsWith("blog/"),
-      },
     },
   },
 });
