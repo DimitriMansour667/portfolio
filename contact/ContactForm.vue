@@ -15,24 +15,39 @@ const submitError = ref(false);
 const handleSubmit = async (e) => {
   e.preventDefault();
   isSubmitting.value = true;
+  submitError.value = false;
+  submitSuccess.value = false;
 
   try {
     const response = await fetch("https://formspree.io/f/xanedenw", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"
       },
       body: JSON.stringify(formData.value),
+      mode: "cors",
+      credentials: "omit"
     });
 
     if (response.ok) {
       submitSuccess.value = true;
       formData.value = { name: "", email: "", subject: "", message: "" };
     } else {
+      const errorData = await response.json().catch(() => ({}));
+      console.error('Form submission error:', errorData);
       submitError.value = true;
     }
   } catch (error) {
-    submitError.value = true;
+    console.error('Form submission error:', error);
+    // Check if it's a CORS error
+    if (error.name === 'TypeError' && error.message.includes('CORS')) {
+      submitError.value = true;
+      // You might want to show a more specific message for CORS errors
+      alert('Unable to submit form due to browser security restrictions. Please try using a different browser or contact directly via email.');
+    } else {
+      submitError.value = true;
+    }
   } finally {
     isSubmitting.value = false;
   }
@@ -146,7 +161,8 @@ const handleLinkedInClick = () => {
         </div>
 
         <div v-if="submitError" class="alert error">
-          Oops! Something went wrong. Please try again later.
+          <p>Oops! Something went wrong. Please try again later.</p>
+          <p class="error-details">If the problem persists, you can reach me directly at <a href="mailto:dimi.mansour03@gmail.com">dimi.mansour03@gmail.com</a></p>
         </div>
       </form>
     </div>
@@ -384,6 +400,16 @@ const handleLinkedInClick = () => {
   background: rgba(220, 53, 69, 0.1);
   color: #dc3545;
   border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.error-details {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.error-details a {
+  color: var(--vp-c-brand);
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
