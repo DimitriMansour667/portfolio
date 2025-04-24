@@ -1,7 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-search: false
 hero:
   name: "Hi, I'm Dimitri"
   tagline: "I'm a software engineer with a passion for new technologies and a love for building new projects."

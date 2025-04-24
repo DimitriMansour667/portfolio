@@ -36,7 +36,7 @@ export default defineConfig({
     sidebar: {
       "/blog/": [
         {
-          text: "Blog",
+          text: "Blogs",
           items: [
             { text: "View All Posts", link: "/blog/index.md" },
             { text: "Migrating everything to VitePress", link: "/blog/1" },
