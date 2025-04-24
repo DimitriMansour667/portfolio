@@ -28,7 +28,11 @@ const features = [
 
 const handleClick = (link) => {
   if (link) {
-    window.open(link, "_blank");
+    if (link.startsWith("http")) {
+      window.open(link, "_blank");
+    } else {
+      window.location.href = link;
+    }
   }
 };
 </script>
@@ -109,53 +113,18 @@ const handleClick = (link) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    #ff4757,
-    #2ed573,
-    #1e90ff,
-    #ffa502,
-    #ff4757
+  background-image: radial-gradient(
+    var(--vp-c-brand-soft) 2px,
+    transparent 2px
   );
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  background-size: 30px 30px;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.5;
   pointer-events: none;
 }
 
 .home-container::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    -45deg,
-    #ff4757,
-    #2ed573,
-    #1e90ff,
-    #ffa502,
-    #ff4757
-  );
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite reverse;
-  z-index: -1;
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  display: none;
 }
 
 /* Ensure content is above the background */
@@ -231,6 +200,24 @@ const handleClick = (link) => {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: linear-gradient(
+    45deg,
+    var(--vp-c-brand-soft),
+    var(--vp-c-brand-2),
+    var(--vp-c-brand-soft)
+  );
+  background-size: 200% 200%;
+  animation: photoGradient 8s ease infinite;
+  border-radius: 16px;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .hero-image img {
@@ -238,6 +225,20 @@ const handleClick = (link) => {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes photoGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .features-section {

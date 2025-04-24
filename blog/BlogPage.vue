@@ -65,43 +65,22 @@ const formatDate = (dateString) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    #ff4757,
-    #2ed573,
-    #1e90ff,
-    #ffa502,
-    #ff4757
+  background-image: radial-gradient(
+    var(--vp-c-brand-soft) 2px,
+    transparent 2px
   );
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  background-size: 30px 30px;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.5;
   pointer-events: none;
 }
 
+/* Remove the after pseudo-element since we don't need it anymore */
 .blog-container::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    -45deg,
-    #ff4757,
-    #2ed573,
-    #1e90ff,
-    #ffa502,
-    #ff4757
-  );
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite reverse;
-  z-index: -1;
-  opacity: 0.2;
-  pointer-events: none;
+  display: none;
 }
 
+/* Remove the gradient animation since we don't need it anymore */
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
