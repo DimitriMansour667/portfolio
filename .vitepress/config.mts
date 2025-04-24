@@ -6,9 +6,7 @@ export default defineConfig({
   title: "DM Portfolio",
   description: "Dimitri Mansour's portfolio",
   appearance: "dark",
-  head: [
-    ["link", { rel: "icon", href: "/logo.png" }],
-  ],
+  head: [["link", { rel: "icon", href: "/logo.png" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: "DM",
@@ -47,7 +45,9 @@ export default defineConfig({
 
     search: {
       provider: "local",
+      options: {
+        filter: (page) => page.relativePath.startsWith("blog/"),
+      },
     },
-
   },
 });
